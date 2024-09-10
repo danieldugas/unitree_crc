@@ -40,19 +40,9 @@ find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 find_package(pybind11 REQUIRED)
 ament_python_install_package(${PROJECT_NAME})
 pybind11_add_module(pybind_crc src/pybind_crc.cpp src/common/motor_crc.cpp)
-# target_include_directories(pybind_crc PRIVATE
-#   ${rclcpp_INCLUDE_DIRS}
-#   ${sensor_msgs_INCLUDE_DIRS}
-#   ${service_msgs_INCLUDE_DIRS}
-#   ${type_description_interfaces_INCLUDE_DIRS}
-#   ${unitree_go_INCLUDE_DIRS}
-# )
-# ament_target_dependencies(pybind_crc ${DEPENDENCY_LIST})
 ament_target_dependencies(pybind_crc
   PUBLIC
   rclcpp
-  service_msgs
-  type_description_interfaces
   unitree_go
 )
 install(TARGETS pybind_crc

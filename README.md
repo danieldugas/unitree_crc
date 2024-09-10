@@ -21,3 +21,25 @@ source ~/pybind_ws/install/setup.sh
 cd ~/pybind_ws/src/unitree_crc/test
 python3 test_crc.py
 ```
+
+should output:
+
+```
+EMPTY MESSAGE TEST
+------------------
+BEFORE
+0
+AFTER
+1264208000
+TEST
+1264208000
+
+Q MESSAGE TEST
+------------------
+BEFORE
+0
+AFTER
+3169975056
+TEST
+3169975056
+```
