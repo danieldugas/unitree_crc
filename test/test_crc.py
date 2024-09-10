@@ -21,7 +21,7 @@ print("")
 print("Q MESSAGE TEST")
 print("------------------")
 msg = LowCmd()
-msg.motor_cmd[0].q = 1
+msg.motor_cmd[0].q = 1.
 msg = convert_to_pybind_lowcmd(msg)
 print("BEFORE")
 print(msg.crc)

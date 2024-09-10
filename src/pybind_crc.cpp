@@ -17,7 +17,7 @@ uint32_t py_test_get_crc()
 uint32_t py_test_get_crc_mcmd0q1()
 {
     unitree_go::msg::LowCmd msg;
-    msg.motor_cmd[0].q = 1;
+    msg.motor_cmd[0].q = 1.0f;
     get_crc(msg);
     return msg.crc;
 }
