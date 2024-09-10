@@ -1,6 +1,6 @@
 from unitree_crc.pybind_crc import py_get_crc
 from unitree_crc.pybind_crc import py_test_get_crc, py_test_get_crc_mcmd0q1
-from unitree_crc import convert_to_pybind_lowcmd
+from unitree_crc import convert_to_pybind_lowcmd, crc
 from unitree_go.msg import LowCmd
 
 
@@ -18,6 +18,8 @@ print("TEST")
 print(py_test_get_crc())
 print("")
 
+assert msg.crc == crc(LowCmd())
+
 print("Q MESSAGE TEST")
 print("------------------")
 msg = LowCmd()
@@ -31,3 +33,4 @@ print(msg.crc)
 print("TEST")
 print(py_test_get_crc_mcmd0q1())
 print("")
+

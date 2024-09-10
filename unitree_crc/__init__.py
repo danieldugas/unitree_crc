@@ -37,3 +37,9 @@ def convert_to_pybind_bmscmd(ros_msg):
     pybind_msg.off = ros_msg.off
     pybind_msg.reserve = ros_msg.reserve
     return pybind_msg
+
+def crc(msg):
+    """ Convenience function to calculate the CRC of a LowCmd message """
+    pb_msg = convert_to_pybind_lowcmd(msg)
+    py_get_crc(pb_msg)
+    return pb_msg.crc
